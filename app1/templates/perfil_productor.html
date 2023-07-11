@@ -1,0 +1,101 @@
+{% extends 'base.html' %} {% block contenido %} {% load static%}
+<div class="row justify-content-center">
+
+  <div class="col-sm-3 col-md-4 col-lg-4 ">
+<button class="btn btn-warning my-2"><a href="/editar_perfil/">EDITAR PERFIL</a></button>
+
+    <table class="table">
+
+      <thead style="background-color: #00D879;color:white; text-shadow: 2px 2px 10px rgba(0,0,0,0.5);">
+
+        <tr>
+          <td>
+            DATOS
+          </td>
+          <td>
+            PRODUCTOR
+          </td>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>
+            Email
+          </td>
+          <td>
+            {{user.email}}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Username
+          </td>
+          <td>
+            {{user.username}}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Nombre
+          </td>
+          <td>
+            {{user.first_name}}
+        </tr>
+
+        <tr>
+          <td>
+            Apellido
+          </td>
+          <td>
+            {{user.last_name}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class=" col-sm-3 col-md-6 col-sm-6" >
+
+    <button class="btn btn-warning my-1 "><a href="/hacer_pedido_prod/">TOMAR PEDIDO</a></button>
+
+    <table class="table">
+      <thead>
+
+        <tr>
+          <th>ID</th>
+          <th>FECHA</th>
+          <th>DIRECCION</th>
+          <th>COMUNA</th>
+          <th>ESTADO</th>
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        {% for x in lista %}
+
+        <tr>
+          <td><button class="btn btn-danger"><a href="/pedido/{{x.id}}">{{x.id}}</a></button> </td>
+          <td> {{x.fecha}}</td>
+          <td> {{x.calle_entrega}}</td>
+          <td> {{x.comuna}}</td>
+          <td> {{x.estado}}</td>
+        </tr>
+
+        {% endfor %}
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+{% endblock %}

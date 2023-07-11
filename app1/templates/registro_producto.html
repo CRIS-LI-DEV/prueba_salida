@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block contenido %}
+{% load static %}
+<div class="row justify-content-center">
+  <div class="col-sm-6">
+    <div class="card">
+
+      <div class="card-header text-center bg-warning" >
+        <img src="{% static '/img/logo4.png' %}" alt="" width="220px"><br>
+        
+        Registro de Producto</div>
+      <div class="card-body">
+
+    <button class="btn btn-warning my-1 nav-dark"><a href="/hacer_pedido_staff/">TOMAR PEDIDO</a></button>
+
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <label for="">ARCHIVO</label><br>
+          <input type="file" name="archivo"><br>
+          <label for="">NOMBRE</label><br>
+          <input type="text" name="nombre"><br>
+          <label for="">DESCRIPCION</label><br>
+          <input type="text" name="descripcion"><br>
+          <label for="">PRECIO</label><br>
+          <input type="number" name="precio"><br>
+          
+          
+          <hr>
+          <button type="submit" class="btn mx-3 btn-warning" >Agregar
+            Producto</button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

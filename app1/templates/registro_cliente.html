@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block contenido %}
+{% load static %}
+<div class="row justify-content-center">
+  <div class="col-sm-6">
+    <div class="card">
+
+      <div class="card-header text-center" style="background-color:#00D879 ; color: white;">
+        <img src="{% static '/img/logo4.png' %}" alt="" width="220px"><br>
+        
+        Editar Perfil</div>
+      <div class="card-body">
+ 
+
+
+        <form method="POST" >
+          {% csrf_token %}
+          {{formulario}}
+          <button type="submit" class="btn my-3" style="background-color:rgb(4, 184, 115);color:white;">Modificar
+            </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

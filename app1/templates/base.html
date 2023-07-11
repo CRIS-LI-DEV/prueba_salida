@@ -1,0 +1,91 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>TeLoEnvio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'estilo.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark nav-estilo">
+        <div class="container-fluid">
+            <a class="navbar-brand" class="logo-nav" href="">
+                TE-LO-ENVIO </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li> <a href="/catalogo/">Catalogo</a> </li>
+                </ul>
+                <ul class="d-flex nav-derecho">
+                    <div class="nav-item dropdown drop">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">CARRITO</a>
+                        <ul class="dropdown-menu">
+                            {% for x in request.session.carrito %}
+                            <li>
+                                <div class="card">
+                                    <div class="card-header">{{x.cantidad}} unidades de {{x.nombre}}</div>
+                                </div>
+                            </li>
+
+
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+                </ul>
+                <ul> {% if user.is_authenticated %}
+                      <li id="in_se"><a href="/logout_view/">CERRAR SESION</a></li>
+                    {% else %}
+                    <li id="in_se"><a href="/login_view/">INICIAR SESION</a></li>
+                    {% endif %}
+                </ul>
+
+                <div>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+    <div class="container-fluid main">
+        {% block contenido %}
+        {% endblock %}
+
+    </div>
+
+    <footer>
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-5 col-lg-3 m-1">
+            </div>
+
+            <div class="col-sm-12 col-md-5 col-lg-3 m-1">
+            </div>
+
+            <div class="col-sm-12 col-md-5 col-lg-6 m-1">
+            </div>
+        </div>
+
+
+    </footer>
+</body>
+
+</html>

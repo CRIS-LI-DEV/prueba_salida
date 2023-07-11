@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200;1,500;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+.caja{
+
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    min-height: 300px;
+    border-radius: 25px;
+}
+
+.nav-estilo{
+box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+background-color:  #e5a900;
+color: black;
+text-shadow: 2px 2px 10px rgba(0,0,0,.4);
+}
+
+.nav-estilo a{
+
+color: black;
+}
+
+.card-header{
+    min-height: 50px;
+    background-color: #e5a900;
+    border-radius: 50px; 
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0,0,0,.4);
+}
+
+footer{
+background-color:#313131;
+    min-height: 200px;
+}
+
+.main{
+min-height: 750px;
+
+}
+
+.drop{
+    text-shadow: none;
+}
+
+.drop li a{
+   color: black;
+}
+
+.main_1{
+
+    
+    min-height: 300px;
+}
+.nav-derecho{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#in_se {
+
+    list-style: none;
+}
+
+#in_se a{
+
+    text-decoration: none;
+}
